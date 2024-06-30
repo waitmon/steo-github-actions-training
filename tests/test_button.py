@@ -1,3 +1,5 @@
+import allure
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -12,14 +14,20 @@ def browser():
     return chrome_browser
 
 
+@allure.title('Simple page')
 def test_button_exist(browser):
-    browser.get('https://www.qa-practice.com/elements/button/simple')
-    assert browser.find_element(By.ID, 'submit-id-submit').is_displayed()
+    with allure.step('Check button is displayed'):
+        browser.get('https://www.qa-practice.com/elements/button/simple')
+        allure.attach(browser.get_screenshot_as_png(), name="simple", attachment_type=AttachmentType.PNG)
+        assert browser.find_element(By.ID, 'submit-id-submit').is_displayed()
 
 
+@allure.title('Like a button page')
 def test_button_exist_2(browser):
-    browser.get('https://www.qa-practice.com/elements/button/like_a_button')
-    assert browser.find_element(By.PARTIAL_LINK_TEXT, 'Click').is_displayed()
+    with allure.step('Check button is displayed'):
+        browser.get('https://www.qa-practice.com/elements/button/like_a_button')
+        allure.attach(browser.get_screenshot_as_png(), name="like_a_button", attachment_type=AttachmentType.PNG)
+        assert browser.find_element(By.PARTIAL_LINK_TEXT, 'Click').is_displayed()
 
 
 # test_branch_commit for 100th time
