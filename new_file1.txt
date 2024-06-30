@@ -1,6 +1,0 @@
-redfsdfsdfsdfsdf
-checkout_branches_training make conflict every day / new branch invaders
-test 8
-test 9
-test 10
-We’ve detected the file encoding as UTF-16LE. When you commit changes we will transcode it to UTF-8.
