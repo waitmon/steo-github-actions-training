@@ -1,9 +1,9 @@
 import allure
+import pytest
 from allure_commons.types import AttachmentType
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-import pytest
+from selenium.webdriver.common.by import By
 
 
 @pytest.fixture()
